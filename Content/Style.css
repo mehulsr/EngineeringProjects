@@ -1,0 +1,26 @@
+﻿body {
+    font-family: 'Roboto', sans-serif;
+    text-align:center;
+    margin:auto;
+    width: 80%;
+}
+
+.marginate {
+    margin:15px;
+}
+
+.blue {
+    color: #3498db;
+}
+
+.green {
+    color: #3ed37d;
+}
+
+.red {
+    color: #e74c3c;
+}
+
+.purple {
+    color: #9b59b6;
+}

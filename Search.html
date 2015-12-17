@@ -1,0 +1,349 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Submit
+    </title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <style>
+        /*Not working yet*/
+        .submit_class {
+            color:#000000;
+        }
+        
+        body{
+            /*background: url("Images/colourful.jpg");*/
+            background-size: cover;
+            background-repeat: no-repeat;
+	        /*background-color: #f8f8f8;*/
+            font-family: 'Roboto';
+        }
+
+        .vertical-offset-100{
+            padding-top:100px;
+        }
+
+        .navbar-login
+        {
+            width: 305px;
+            padding: 10px;
+            padding-bottom: 0px;
+        }
+
+        .navbar-login-session
+        {
+            padding: 10px;
+            padding-bottom: 0px;
+            padding-top: 0px;
+        }
+
+        .icon-size
+        {
+            font-size: 87px;
+        }
+
+        #social:hover 
+        {
+    		-webkit-transform:scale(1.1); 
+            -moz-transform:scale(1.1); 
+            -o-transform:scale(1.1); 
+	    }
+		
+        #social 
+        {
+			-webkit-transform:scale(0.8);
+                /* Browser Variations: */
+            -moz-transform:scale(0.8);
+            -o-transform:scale(0.8); 
+            -webkit-transition-duration: 0.5s; 
+            -moz-transition-duration: 0.5s;
+            -o-transition-duration: 0.5s;
+		}           
+/* 
+    Only Needed in Multi-Coloured Variation 
+                                               */
+			.social-fb:hover {
+				color: #3B5998;
+			}
+			.social-tw:hover {
+				color: #4099FF;
+			}
+			.social-gp:hover {
+				color: #d34836;
+			}
+			.social-em:hover {
+				color: #f39c12;
+			}
+            
+            .circular
+            {
+            margin:auto;
+            /*z-index:10;*/
+            width: 120px;
+            height: 120px;
+            border-radius: 150px;
+            -webkit-border-radius: 150px;
+            -moz-border-radius: 150px;
+            /*box-shadow: 0 0 8px rgba(0, 0, 0, .8);*/
+            /*-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);*/
+            /*-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);*/
+            }
+            
+            /*.each-proj
+            {
+                background-color: #ffffff;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            .proj-title
+            {
+                color:#1BBC9B;
+                font-size: larger;
+                padding: 10px;
+            }
+            .proj-img
+            {
+                width:30%;
+                padding:10px;
+                float:left;
+            }
+            .proj-desc
+            {
+                width:70%;
+                padding:10px;
+                float:left;
+            }*/
+            
+    </style>
+
+</head>
+<body>
+    
+<div id="header" style="padding-top:36px; padding-bottom:36px; width:80%; margin-left:auto; margin-right:auto; background-color:#ffffff; text-align:center;">
+    <div style="width:100%; font-weight:700; font-size:36px; ">
+        Engineering Projects
+    </div>
+    Developed by <a href="http://github.com/mehulsr">MSR</a>
+    <br/>
+    <br/>
+    <div id="filters" style="font-size:16px; width:auto; text-align:center;">
+        <label style="">Filters:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        
+        <!--<div style="float:left; width:auto;">-->
+            <label class="">Year &nbsp;</label>
+            <select class="" id="year">
+                <option value="First">First</option>
+                <option value="Second">Second</option>
+                <option value="Third">Third</option>
+                <option value="Fourth">Fourth</option>
+                <option value="M.Tech I">M.Tech I</option>
+                <option value="M.Tech II">M.Tech II</option> 
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+        <!--</div>-->
+        
+        <!--<div style="float:left; width:auto;">-->
+            <label id="Label1" class="">Level &nbsp;</label>
+            <select class="" id="level">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+        <!--</div>-->
+        
+        <!--<div style="float:left; width:auto;">-->
+            <label class="">Time Taken &nbsp</label>
+            <select class="" id="time">
+                <option value="0-1 Semester">0-1 Semester</option>
+                <option value="1-2 Semester">1-2 Semester</option>
+                <option value="1-2 Year">1-2 Year</option>
+                <option value="2-3 Years">2-3 Year</option>
+                <option value="> 3 Years">> 3 Year</option>
+            </select>
+        <!--</div>                -->
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            
+            <input type="button" id="submit" class="btn btn-primary" value="Search" style="margin-left:10px; margin-right:10px;" OnClick="submit_Click"/>
+            <input type="button" id="submit" class="btn btn-primary" value="Submit Project" style="margin-left:10px; margin-right:10px;" onclick="window.location='Submissions.html';"/>
+    </div>
+    <!--<br/>-->
+    <!--<br/>-->
+    <!--<div id="buttons" style="width:100%;">-->
+    <!--</div>-->
+</div>
+
+<div id="containers" style="width:80%; margin-left:auto; margin-right:auto; margin-top:0px; margin-bottom:72px; background-color:#ffffff; height:auto;">
+<!--#1BBC9B #f39c12-->
+    <div class="result" style="padding:10px; margin:0px 20px; background-color:#1bbc98; font-size:larger; font-weight:700; color:#ffffff;">
+        Results
+    </div>
+    
+    <div class="each-proj" style="border:1px solid rgba(0,0,0,0.1); margin-left:20px; margin-right:20px; background-color:#f9f9f9;">
+        <div class="proj-title" style="padding:10px; font-size:larger; font-weight:600; width:100%;">
+            <img src="Images/colourful.jpg" style="width:36px; height:24px;"/>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            Search Engine Optimisation
+        </div>
+        <div style="width:100%; float:left;">
+            <!--<div style="width:25%; padding:10px; float:left; text-align:center; vertical-align:center;">
+                <img src="Images/colourful.jpg" style="width:120px; height:90px;"/>
+            </div>-->
+            <div style=" padding:0px 10px; float:right;">
+                <p>
+                    This project aims to optimise the desktop search by indexing only those files that are useful only to the user.
+                    This project aims to optimise the desktop search by indexing only those files that are useful only to the user. 
+                    This project aims to optimise the desktop search by indexing only those files that are useful only to the user. <br/>
+                </p>
+                <p>
+                    Level: 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Year: 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Time Taken: 1 Semester <br/>
+                </p>
+            </div>
+        </div>
+        <div style="width:100%; padding-top:10px; padding-bottom:10px; padding-left:10px; padding-right:10px;">
+            <i>Important Links:</i>
+            <i style="color:#337ab7"><a href="http://github.com/mehulsr/SEO">http://github.com/mehulsr/SEO</a></i>
+            <br/>                
+            <i>Tags:</i>
+            <i style="color:#337ab7">#basic #seo</i>
+        </div>
+    </div>  
+    
+    <div class="each-proj" style="border:1px solid rgba(0,0,0,0.1); margin-left:20px; margin-right:20px; background-color:#f9f9f9;">
+        <div class="proj-title" style="padding:10px; font-size:larger; font-weight:600; width:100%;">
+            <img src="Images/colourful.jpg" style="width:36px; height:24px;"/>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            Search Engine Optimisation
+        </div>
+        <div style="width:100%; float:left;">
+            <!--<div style="width:25%; padding:10px; float:left; text-align:center; vertical-align:center;">
+                <img src="Images/colourful.jpg" style="width:120px; height:90px;"/>
+            </div>-->
+            <div style=" padding:0px 10px; float:right;">
+                <p>
+                    This project aims to optimise the desktop search by indexing only those files that are useful only to the user.
+                    This project aims to optimise the desktop search by indexing only those files that are useful only to the user. <br/>
+                    This project aims to optimise the desktop search by indexing only those files that are useful only to the user. <br/>
+                </p>
+                <p>
+                    Level: 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Year: 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Time Taken: 1 Semester <br/>
+                </p>
+            </div>
+        </div>
+        <div style="width:100%; padding-top:10px; padding-bottom:10px; padding-left:10px; padding-right:10px;">
+            <i>Important Links:</i>
+            <i style="color:#337ab7"><a href="http://github.com/mehulsr/SEO">http://github.com/mehulsr/SEO</a></i>
+            <br/>                
+            <i>Tags:</i>
+            <i style="color:#337ab7">#basic #seo</i>
+        </div>
+    </div>  
+    
+    <div class="each-proj" style="border:1px solid rgba(0,0,0,0.1); margin-left:20px; margin-right:20px; background-color:#f9f9f9;">
+        <div class="proj-title" style="padding:10px; font-size:larger; font-weight:600; width:100%;">
+            <img src="Images/colourful.jpg" style="width:36px; height:24px;"/>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            Search Engine Optimisation
+        </div>
+        <div style="width:100%; float:left;">
+            <!--<div style="width:25%; padding:10px; float:left; text-align:center; vertical-align:center;">
+                <img src="Images/colourful.jpg" style="width:120px; height:90px;"/>
+            </div>-->
+            <div style=" padding:0px 10px; float:right;">
+                <p>
+                    This project aims to optimise the desktop search by indexing only those files that are useful only to the user.
+                    This project aims to optimise the desktop search by indexing only those files that are useful only to the user. <br/>
+                    This project aims to optimise the desktop search by indexing only those files that are useful only to the user. <br/>
+                </p>
+                <p>
+                    Level: 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Year: 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Time Taken: 1 Semester <br/>
+                </p>
+            </div>
+        </div>
+        <div style="width:100%; padding-top:10px; padding-bottom:10px; padding-left:10px; padding-right:10px;">
+            <i>Important Links:</i>
+            <i style="color:#337ab7"><a href="http://github.com/mehulsr/SEO">http://github.com/mehulsr/SEO</a></i>
+            <br/>                
+            <i>Tags:</i>
+            <i style="color:#337ab7">#basic #seo</i>
+        </div>
+    </div>  
+    
+    <div class="each-proj" style="border:1px solid rgba(0,0,0,0.1); margin-left:20px; margin-right:20px; background-color:#f9f9f9;">
+        <div class="proj-title" style="padding:10px; font-size:larger; font-weight:600; width:100%;">
+            <img src="Images/colourful.jpg" style="width:36px; height:24px;"/>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            Search Engine Optimisation
+        </div>
+        <div style="width:100%; float:left;">
+            <!--<div style="width:25%; padding:10px; float:left; text-align:center; vertical-align:center;">
+                <img src="Images/colourful.jpg" style="width:120px; height:90px;"/>
+            </div>-->
+            <div style=" padding:0px 10px; float:right;">
+                <p>
+                    This project aims to optimise the desktop search by indexing only those files that are useful only to the user.
+                    This project aims to optimise the desktop search by indexing only those files that are useful only to the user. <br/>
+                    This project aims to optimise the desktop search by indexing only those files that are useful only to the user. <br/>
+                </p>
+                <p>
+                    Level: 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Year: 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Time Taken: 1 Semester <br/>
+                </p>
+            </div>
+        </div>
+        <div style="width:100%; padding-top:10px; padding-bottom:10px; padding-left:10px; padding-right:10px;">
+            <i>Important Links:</i>
+            <i style="color:#337ab7"><a href="http://github.com/mehulsr/SEO">http://github.com/mehulsr/SEO</a></i>
+            <br/>                
+            <i>Tags:</i>
+            <i style="color:#337ab7">#basic #seo</i>
+        </div>
+    </div>  
+ 
+</div>
+
+
+<div id="footer" style="width: 100%; background-color:#ffffff; border-top: 1px solid rgba(0,0,0,0.1); bottom: 0">
+    <div style="width:100%; padding-top:20px; padding-left:20px; padding-right:20px; padding-bottom:10px; float:left;">
+        <div style="width:20%; float:left; text-align:center;">
+            <img class="circular" src="Images/profile-pic.jpg" />
+        </div>
+        <div style="width:80%; padding:10px; float:right;">
+            <p>
+                Hi, I am Mehul!<br/>
+                I am a software developer who thinks that all the code I write will crawl out and form a Matrix someday. I get excited by the prospect of any fantasy that feels like it can be coded to change the world.
+                I am currently breaking my head over Neural Networks and Formal Languages. 
+            </p>
+        </div>
+    </div>
+    <div style="width:100%;">
+        <p style="padding-top:10px; margin: 0 0 0px; text-align:center;">- Mehul Smriti Raje &copy; 2015 -</p>
+        <br />
+            <div style="margin-left:auto; margin-right:auto; text-align:center; padding-top:0px; padding-bottom:20px;">
+                <a href="https://github.com/mehulsr"><img id="I1" src="Images/github.png" width="30" height="30" class="fa fa-facebook-square fa-3x social-tw"/></a>
+                <a href="http://lnkd.in/bJybHkK"><img id="I1" src="Images/linkedin.png" width="30" height="30" class="fa fa-facebook-square fa-3x social-tw"/></a>
+                <a href="https://www.facebook.com/mehul.s.raje"><img id="I1" src="Images/facebook.png" width="30" height="30" class="fa fa-facebook-square fa-3x social-tw"/></a>
+                <a href="https://twitter.com/MSR163"><img id="I1" src="Images/twitter.png" width="30" height="30" class="fa fa-twitter-square fa-3x social-tw"/></a>
+                <a href="https://plus.google.com/+MehulSmritiRaje"><img id="I2" src="Images/googleplus.png" width="30" height="30" class="fa fa-google-plus-square fa-3x social-gp"/></a>
+                <a href="mailto:mehul.raje@gmail.com"><img id="I3" src="Images/email.png" width="30" height="30" class="fa fa-envelope-square fa-3x social-em"/></a>
+            </div>
+    </div>
+ </div>
+        
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+    </title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <asp:ContentPlaceHolder ID="head_cph" runat="server"></asp:ContentPlaceHolder>
+    <style>
+        body{
+            background: url("Images/colourful.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+	        background-color: #444;
+            font-family: 'Roboto';
+        }
+
+        .vertical-offset-100{
+            padding-top:100px;
+        }
+
+        .navbar-login
+        {
+            width: 305px;
+            padding: 10px;
+            padding-bottom: 0px;
+        }
+
+        .navbar-login-session
+        {
+            padding: 10px;
+            padding-bottom: 0px;
+            padding-top: 0px;
+        }
+
+        .icon-size
+        {
+            font-size: 87px;
+        }
+
+        #social:hover 
+        {
+    		-webkit-transform:scale(1.1); 
+            -moz-transform:scale(1.1); 
+            -o-transform:scale(1.1); 
+	    }
+		
+        #social 
+        {
+			-webkit-transform:scale(0.8);
+                /* Browser Variations: */
+            -moz-transform:scale(0.8);
+            -o-transform:scale(0.8); 
+            -webkit-transition-duration: 0.5s; 
+            -moz-transition-duration: 0.5s;
+            -o-transition-duration: 0.5s;
+		}           
+/* 
+    Only Needed in Multi-Coloured Variation 
+                                               */
+			.social-fb:hover {
+				color: #3B5998;
+			}
+			.social-tw:hover {
+				color: #4099FF;
+			}
+			.social-gp:hover {
+				color: #d34836;
+			}
+			.social-em:hover {
+				color: #f39c12;
+			}
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container"> 
+        <div class="navbar-header">
+            <asp:HyperLink ID="HyperLink2" runat="server" Target="_blank" NavigateUrl="#" CssClass="navbar-brand" style="font-size:28px; font-weight:700">AIT Project</asp:HyperLink>
+        </div>
+        <div class="collapse navbar-collapse" style="font-size:20px;">
+            <ul class="nav navbar-nav">
+                <li id="op1" class="submit_class"><asp:HyperLink NavigateUrl="Submissions.aspx" runat="server">Submit</asp:HyperLink></li>
+                <li id="op2" class="search_class"><asp:HyperLink NavigateUrl="Search.aspx" runat="server">Search</asp:HyperLink></li>
+                <li id="op3" class="forum_class"><asp:HyperLink NavigateUrl="Forum.aspx" runat="server">Forum</asp:HyperLink></li>
+                <li id="op4" class="achiever-class"><asp:HyperLink NavigateUrl="Wall.aspx" runat="server">Wall of Fame</asp:HyperLink></li>            
+             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <asp:LinkButton runat="server" ID="theme_button" OnClick="theme_Click" Text="Theme Change" Font-Bold="true">
+                        <%--NavigateUrl="#" class="dropdown-toggle" data-toggle="dropdown">--%>
+                        <%--<span class="glyphicon glyphicon-user"></span>--%> 
+                        <%--<strong>Theme On</strong>--%>
+                        <%--<span class="glyphicon glyphicon-chevron-down"></span>--%>
+                    </asp:LinkButton>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="navbar-login">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <p class="text-center">
+                                            <span class="glyphicon glyphicon-user icon-size"></span>
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p class="text-left"><strong>Welcome Mehul</strong></p>
+                                        <p class="text-left small">mehul.smriti@learner.manipal.edu</p>
+                                        <p class="text-left small">Number of Projects Submitted = 0</p>
+                                        <p class="text-left small">Number of Discussions Participated In = 0</p>
+                                        <p class="text-left small">Number of Achievements Submitted = 0</p>
+                                        <%--<p class="text-left">
+                                            <a href="#" class="btn btn-primary btn-block btn-sm">Actualizar Datos</a>
+                                        </p>--%>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="navbar-login navbar-login-session">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <p>
+                                            <asp:HyperLink class="btn btn-danger btn-block" ID="HyperLink1" runat="server" NavigateUrl="#">HyperLink</asp:HyperLink>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+         <div style="width:80%; margin-left:auto; margin-right:auto; margin-top:100px; margin-bottom:120px; background-color:#f8f8f8; height:auto;">
+                 <asp:ContentPlaceHolder id="cp1" runat="server">
+                 </asp:ContentPlaceHolder>
+         </div>
+    </form>
+            <!-- Social Footer, Colour Matching Icons -->
+
+         <div ID="footer" style="width: 100%; background-color:#f8f8f8; position: fixed; bottom: 0">
+            <p style="padding:20px; margin: 0 0 0px; text-align:center;">- Mehul Smriti Raje &copy; 2015 -</p>
+<%--            <br />
+                <a href="https://www.facebook.com/bootsnipp"><i id="social" class="fa fa-facebook-square fa-3x social-fb"></i></a>
+	            <a href="https://twitter.com/bootsnipp"><i id="I1" class="fa fa-twitter-square fa-3x social-tw"></i></a>
+	            <a href="https://plus.google.com/+Bootsnipp-page"><i id="I2" class="fa fa-google-plus-square fa-3x social-gp"></i></a>
+	            <a href="mailto:bootsnipp@gmail.com"><i id="I3" class="fa fa-envelope-square fa-3x social-em"></i></a>--%>
+        </div>
+</body>
+</html>
