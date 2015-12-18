@@ -3,11 +3,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>
-        Submit
+        Search
     </title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/jquery-1.9.1.min.js"></script>
+      <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
     <style>
@@ -83,41 +84,54 @@
             .circular
             {
             margin:auto;
-            /*z-index:10;*/
             width: 120px;
             height: 120px;
             border-radius: 150px;
             -webkit-border-radius: 150px;
             -moz-border-radius: 150px;
-            /*box-shadow: 0 0 8px rgba(0, 0, 0, .8);*/
-            /*-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);*/
-            /*-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);*/
             }
             
-            /*.each-proj
+            .each-proj
             {
-                background-color: #ffffff;
-                margin-top: 10px;
-                margin-bottom: 10px;
+                border:1px solid rgba(0,0,0,0.1); 
+                margin-left:20px; 
+                margin-right:20px; 
+                background-color:#f9f9f9;
             }
             .proj-title
             {
-                color:#1BBC9B;
-                font-size: larger;
-                padding: 10px;
+                padding:10px; 
+                font-size:larger; 
+                font-weight:600; 
+                width:100%;
             }
             .proj-img
             {
-                width:30%;
-                padding:10px;
+                width:36px; 
+                height:24px;
+            }
+            .proj-content
+            {
+                width:100%; 
                 float:left;
             }
             .proj-desc
             {
-                width:70%;
-                padding:10px;
-                float:left;
-            }*/
+                padding:0px 10px; 
+                float:right;
+            }
+            .proj-footer
+            {
+                width:100%; 
+                padding-top:10px; 
+                padding-bottom:10px; 
+                padding-left:10px; 
+                padding-right:10px;                
+            }
+            .proj-links
+            {
+                color:#337ab7;
+            }
             
     </style>
 
@@ -186,17 +200,18 @@
         Results
     </div>
     
-    <div class="each-proj" style="border:1px solid rgba(0,0,0,0.1); margin-left:20px; margin-right:20px; background-color:#f9f9f9;">
-        <div class="proj-title" style="padding:10px; font-size:larger; font-weight:600; width:100%;">
-            <img src="Images/colourful.jpg" style="width:36px; height:24px;"/>
+    <div class="each-proj">
+        <div class="proj-title">
+            <img class="proj-img" src="Images/colourful.jpg"/>
             &nbsp;&nbsp;&nbsp;&nbsp;
             Search Engine Optimisation
         </div>
-        <div style="width:100%; float:left;">
+        
+        <div class="proj-content">
             <!--<div style="width:25%; padding:10px; float:left; text-align:center; vertical-align:center;">
                 <img src="Images/colourful.jpg" style="width:120px; height:90px;"/>
             </div>-->
-            <div style=" padding:0px 10px; float:right;">
+            <div class="proj-desc">
                 <p>
                     This project aims to optimise the desktop search by indexing only those files that are useful only to the user.
                     This project aims to optimise the desktop search by indexing only those files that are useful only to the user. 
@@ -209,13 +224,15 @@
                 </p>
             </div>
         </div>
-        <div style="width:100%; padding-top:10px; padding-bottom:10px; padding-left:10px; padding-right:10px;">
+        
+        <div class="proj-footer" >
             <i>Important Links:</i>
-            <i style="color:#337ab7"><a href="http://github.com/mehulsr/SEO">http://github.com/mehulsr/SEO</a></i>
+            <i class="proj-links"><a href="http://github.com/mehulsr/SEO">http://github.com/mehulsr/SEO</a></i>
             <br/>                
             <i>Tags:</i>
-            <i style="color:#337ab7">#basic #seo</i>
+            <i class="proj-links">#basic #seo</i>
         </div>
+        
     </div>  
     
     <div class="each-proj" style="border:1px solid rgba(0,0,0,0.1); margin-left:20px; margin-right:20px; background-color:#f9f9f9;">
@@ -343,6 +360,58 @@
             </div>
     </div>
  </div>
+ 
+ <script>
+    var myDataRef = new Firebase('https://engineering-projects.firebaseio.com//display-projects');
+    
+   /** @uthor: Mehul Smriti Raje
+    * Function to fetch entries and form them in the table
+   */
+
+    var projectList = $('#containers');    
+
+    myDataRef.on('child_added', function(snapshot) {
+        var data = snapshot.val();
+        displayProject(data);
+    });
+    
+    function displayProject(data) {
+        // $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+        // $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+        var newProject = $('<div class="each-proj">');
+            newProject.append('<div class="proj-title">');
+            newProject.append('<img class="proj-img" src="Images/colourful.jpg"/>'+
+                            '&nbsp;&nbsp;&nbsp;&nbsp;'+
+                            'Search Engine Optimisation');
+            newProject.append('</div>');
+            
+            newProject.append('<div class="proj-content">');
+                newProject.append('<div class="proj-desc">');
+                    newProject.append('<p>');
+                        newProject.append('This project aims to optimise the desktop search by indexing only those files that are useful only to the user.'+
+                                          'This project aims to optimise the desktop search by indexing only those files that are useful only to the user.'+ 
+                                          'This project aims to optimise the desktop search by indexing only those files that are useful only to the user. <br/>');
+                    newProject.append('</p>');
+                    newProject.append('<p>');
+                        newProject.append('Level: 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
+                                          'Year: 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
+                                          'Time Taken: 1 Semester <br/>');
+                    newProject.append('</p>');
+                newProject.append('</div>');
+            newProject.append('</div>');
+            
+            newProject.append('<div class="proj-footer" >');
+                newProject.append('<i>Important Links:</i>');
+                newProject.append('<i class="proj-links"><a href="http://github.com/mehulsr/SEO">http://github.com/mehulsr/SEO</a></i>');
+                newProject.append('<br/>');
+                newProject.append('<i>Tags:</i>');
+                newProject.append('<i class="proj-links">#basic #seo</i>');
+            newProject.append('</div>');
+        newProject.append('</div>');            
+        
+        projectList.append(newProject);
+    };
+</script>
         
 
 </body>

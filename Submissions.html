@@ -3,11 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>
-        Submit
+        Submissions
     </title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <!--<script src="js/index.js"></script>-->
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
     <style>
@@ -17,7 +19,6 @@
         }
         
         body{
-            /*background: url("Images/colourful.jpg");*/
             background-size: cover;
             background-repeat: no-repeat;
 	        /*background-color: #f8f8f8;*/
@@ -64,34 +65,15 @@
             -moz-transition-duration: 0.5s;
             -o-transition-duration: 0.5s;
 		}           
-/* 
-    Only Needed in Multi-Coloured Variation 
-                                               */
-			.social-fb:hover {
-				color: #3B5998;
-			}
-			.social-tw:hover {
-				color: #4099FF;
-			}
-			.social-gp:hover {
-				color: #d34836;
-			}
-			.social-em:hover {
-				color: #f39c12;
-			}
-            
+
             .circular
             {
             margin:auto;
-            /*z-index:10;*/
             width: 120px;
             height: 120px;
             border-radius: 150px;
             -webkit-border-radius: 150px;
             -moz-border-radius: 150px;
-            /*box-shadow: 0 0 8px rgba(0, 0, 0, .8);*/
-            /*-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);*/
-            /*-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);*/
             }
     </style>
 
@@ -116,20 +98,9 @@
                 
     <div class="container" style="margin-bottom:51px; width:100%; background-color:#f9f9f9; border:1px solid rgba(0,0,0,0.1);">
         <div class="row" style="margin-left:auto; margin-right:auto; width: 100%; margin-top: 20px;margin-bottom: 20px;">
-        <!--<fieldset style="width:100%;">
-            <legend style="font-weight:700; color:#532db4">Submit a Project/Paper</legend>
-            <div style="width:50%; float:left;">
-            </div>
-            <div style="width:50%; float:right;">
-                <input type="button" class="btn btn-default" style="float:right;" id="ImageButton1" CommandName="NextView" CommandArgument="View2" value=">" />
-            </div>
-        </fieldset>-->
-            <!--<br />-->
             <div class="col-md-6" style="width:100%;">
-                
-            <fieldset style="margin-left:auto; margin-right:auto; width:70%;">
-    
-                
+            <fieldset style="margin-left:auto; margin-right:auto; width:90%;">
+  
                 <div class="form-group">
                 <label id="result_label" class="control-label" Text="Please Enter all the Fields" Font-Bold="true"/>
                 </div>                                                                                                
@@ -139,7 +110,7 @@
                 <div class="form-group">
                 <label class="control-label">Project/Paper Name</label>
                 <div class="">
-                    <input type="text" id="name" TextMode="SingleLine" placeholder="" class="form-control"/>
+                    <input type="text" id="proj-name" TextMode="SingleLine" placeholder="" class="form-control"/>
                 </div>
                 </div>
             
@@ -147,7 +118,8 @@
                 <div class="form-group">
                 <label class="control-label">Project/Paper Description</label>
                 <div class="">
-                    <input type="textarea" id="desc" placeholder="" class="form-control"/>
+                    <!--<input type="textarea" id="proj-desc" placeholder="" class="form-control"/>-->
+                    <textarea id="proj-desc" placeholder="" rows="2" class="form-control"></textarea>
                 </div>
                 </div>
     
@@ -155,55 +127,45 @@
                 <div class="form-group">
                 <label class="control-label">Platform Used</label>
                 <div class="">
-                    <input type="text" id="platform" TextMode="SingleLine" placeholder="" class="form-control"/>
+                    <input type="text" id="proj-platform" TextMode="SingleLine" placeholder="Eg. Eclipse with ADT Bundle" class="form-control"/>
                 </div>
                 </div>
     
                 <div class="form-group">
                 <label class="control-label">Team Size</label>
                 <div class="">
-                    <input type="text" id="size" placeholder="" class="form-control"/>
+                    <input type="text" id="proj-size" placeholder="Enter Digits. Eg. 4" class="form-control"/>
                 </div>
                 </div>
     
-                <!-- Text input-->
+                 <!--Text input
                 <div class="form-group">
                 <label class="control-label">Team Members</label>
                 <div class="">
-                    <input type="text" id="team" TextMode="SingleLine" placeholder="" class="form-control"/>
+                    <input type="text" id="proj-team" TextMode="SingleLine" placeholder="" class="form-control"/>
                 </div>
-                </div>
+                </div>-->
     
                 <!-- Text input-->
                 <div class="form-group">
                 <label class="control-label">Languages Used</label>
                 <div class="">
-                    <!--<asp:CheckBoxList class="col-sm" id="languages">
-                        <li Text="C/C++"></li>
-                        <li Text="Java"></li>
-                        <li Text="Python"></li>
-                        <li Text="C#"></li>
-                        <li Text="HTML"></li>
-                        <li Text="CSS"></li>
-                        <li Text="Javascript"></li>
-                        <li Text="PHP"></li>
-                    </asp:CheckBoxList>-->
                     <table style="width:100%">
                         <tr>
                             <td><input type="checkbox" id="cb1" value="C/C++" />&nbsp;&nbsp;<label for="cb1">C/C++</label></td>
-                            <td><input type="checkbox" id="cb1" value="Java" />&nbsp;&nbsp;<label for="cb1">Java</label></td>
+                            <td><input type="checkbox" id="cb2" value="Java" />&nbsp;&nbsp;<label for="cb1">Java</label></td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" id="cb1" value="Python" />&nbsp;&nbsp;<label for="cb1">Python</label></td>
-                            <td><input type="checkbox" id="cb1" value="C#" />&nbsp;&nbsp;<label for="cb1">C#</label></td>
+                            <td><input type="checkbox" id="cb3" value="Python" />&nbsp;&nbsp;<label for="cb1">Python</label></td>
+                            <td><input type="checkbox" id="cb4" value="C#" />&nbsp;&nbsp;<label for="cb1">C#</label></td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" id="cb1" value="HTML" />&nbsp;&nbsp;<label for="cb1">HTML</label></td>
-                            <td><input type="checkbox" id="cb1" value="CSS" />&nbsp;&nbsp;<label for="cb1">CSS</label></td>
+                            <td><input type="checkbox" id="cb5" value="HTML" />&nbsp;&nbsp;<label for="cb1">HTML</label></td>
+                            <td><input type="checkbox" id="cb6" value="CSS" />&nbsp;&nbsp;<label for="cb1">CSS</label></td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" id="cb1" value="Javascript" />&nbsp;&nbsp;<label for="cb1">Javascript</label></td>
-                            <td><input type="checkbox" id="cb1" value="PHP" />&nbsp;&nbsp;<label for="cb1">PHP</label></td>
+                            <td><input type="checkbox" id="cb7" value="Javascript" />&nbsp;&nbsp;<label for="cb1">Javascript</label></td>
+                            <td><input type="checkbox" id="cb8" value="PHP" />&nbsp;&nbsp;<label for="cb1">PHP</label></td>
                         </tr>                                                
                     </table>                        
                 </div>                      
@@ -212,7 +174,7 @@
                 <!-- Text input-->
                 <div class="form-group col-sm-6">
                 <label id="Label4" class="control-label">Project Type &nbsp;</label>
-                <select class="" id="type">
+                <select class="" id="proj-type">
                     <option value="Commercial">Commercial</option>
                     <option value="Research">Research</option>
                     <option value="School">School</option>
@@ -224,7 +186,7 @@
                 <!-- Text input-->
                 <div class="form-group col-sm-6">
                 <label class="control-label">Year &nbsp;</label>
-                <select class="" id="year">
+                <select class="" id="proj-year">
                     <option value="First">First</option>
                     <option value="Second">Second</option>
                     <option value="Third">Third</option>
@@ -237,7 +199,7 @@
                 <!-- Text input-->
                 <div class="form-group col-sm-6">
                 <label id="Label1" class="control-label">Level &nbsp;</label>
-                <select class="" id="level">
+                <select class="" id="proj-level">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -249,7 +211,7 @@
                 <!-- Text input-->
                 <div class="form-group col-sm-6">
                 <label class="control-label">Time Taken</label>
-                <select class="" id="time">
+                <select class="" id="proj-time">
                     <option value="0-1 Semester">0-1 Semester</option>
                     <option value="1-2 Semester">1-2 Semester</option>
                     <option value="1-2 Year">1-2 Year</option>
@@ -261,27 +223,26 @@
                 <br />
                 <!-- Text input-->
                 <div class="form-group">
-                <label class="control-label">Contact Number</label>
+                <label class="control-label">Contact Email</label>
                 <div class="">
-                    <input type="text" id="contact" placeholder="" class="form-control"/>
+                    <input type="text" id="proj-contact" placeholder="Enter an email where queries can be sent." class="form-control"/>
                 </div>
                 </div>  
                 
                 <!-- Text input-->
                 <div class="form-group">
-                <label class="control-label">Images or Other Files</label>
+                <label class="control-label">Important Links</label>
                 <div class="">
-                    <asp:FileUpload id="files" />
+                    <input type="text" id="proj-links" placeholder="Insert comma-separated links" class="form-control"/>
                 </div>
-                </div>                                                                                                
-    
+                </div>   
             <br />
                 
                 <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <div class="pull-right">
                     <!--<button type="submit" class="btn btn-default">Cancel</button>-->
-                    <input type="button" id="submit" class="btn btn-primary" value="Submit" OnClick="submit_Click"/>
+                    <input type="button" id="proj-submit" class="btn btn-primary" value="Submit"/>
                     </div>
                 </div>
                 </div>
@@ -321,16 +282,88 @@
     </div>
  </div>
         
+<script>
+    var myDataRef = new Firebase('https://engineering-projects.firebaseio.com//require-approval-projects');
+   
+   /** @uthor: Mehul Smriti Raje
+    * Function to submit an entry into the databse
+   */
+    var submission= $('#proj-submit').click(function () {
+        console.log("inside function");
+        
+        var name = $('#proj-name').val();
+        var desc = $('#proj-desc').val();
+        var platform = $('#proj-platform').val();
+        var size = $('#proj-size').val();
+        
+        var lang_list='';
+        for(var i=1;i<=8;i++)
+        {
+            var lang_id = "#cb"+i;
+            if($(lang_id).is(":checked"))
+            {
+                lang_list+= $(lang_id).val() +",";
+            }
+        }
+        
+        var ptype = $('#proj-type').val();
+        var year = $('#proj-year').val();
+        var level = $('#proj-level').val();
+        var time = $('#proj-time').val();
+        var contact = $('#proj-contact').val();
+        var links = $('#proj-links').val();
+        
+        console.log(lang_list);
+        try
+        {
+            console.log("before pushing");
+            myDataRef.push({name: name, desc: desc, platform:platform, size:size,
+                        languages:lang_list ,ptype:ptype, year:year, level:level, time:time, 
+                        contact:contact, links:links
+                        });  
+                        
+              
+            $('#name').val('');
+            $('#desc').val('');
+            $('#platform').val('');
+            $('#size').val('');
+            
+            for(var i=0;i<8;i++)
+            {
+                if($(lang_id).checked)
+                    $(lang_id).checked=!$(lang_id).checked;
+            }        
+            
+            $('#type').val('');
+            $('#year').val('');
+            $('#level').val('');
+            $('#time').val('');
+            $('#contact').val('');
+            $('#links').val('');
+            alert("Entry Submitted! Submit Another Entry.");          
+        }
+        catch(err)
+        {
+            console.log(err);
+            alert("Error Submitting Entry! Please try again!");
+        }
+    });
+    
+   /** @uthor: Mehul Smriti Raje
+    * Function to fetch entries and form them in the table
+   */
+  
+    // myDataRef.on('child_added', function(snapshot) {
+    // var message = snapshot.val();
+    // displayChatMessage(message.name, message.text);
+    // });
+    // function displayChatMessage(name, text) {
+    // $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+    // $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+    // };
+</script>
+
 
 </body>
 </html>
 
-
-<!--<asp:Content id="Content2" ContentPlaceHolderid="cp1">
-    <asp:MultiView id="MultiView1" ActiveViewIndex="0">
-        <asp:View id="View1">-->
-
-
-        <!--</asp:View>
-    </asp:MultiView>
-</asp:Content>-->
