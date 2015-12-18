@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -18,10 +18,8 @@
         }
         
         body{
-            /*background: url("Images/colourful.jpg");*/
             background-size: cover;
             background-repeat: no-repeat;
-	        /*background-color: #f8f8f8;*/
             font-family: 'Roboto';
         }
 
@@ -48,39 +46,6 @@
             font-size: 87px;
         }
 
-        #social:hover 
-        {
-    		-webkit-transform:scale(1.1); 
-            -moz-transform:scale(1.1); 
-            -o-transform:scale(1.1); 
-	    }
-		
-        #social 
-        {
-			-webkit-transform:scale(0.8);
-                /* Browser Variations: */
-            -moz-transform:scale(0.8);
-            -o-transform:scale(0.8); 
-            -webkit-transition-duration: 0.5s; 
-            -moz-transition-duration: 0.5s;
-            -o-transition-duration: 0.5s;
-		}           
-/* 
-    Only Needed in Multi-Coloured Variation 
-                                               */
-			.social-fb:hover {
-				color: #3B5998;
-			}
-			.social-tw:hover {
-				color: #4099FF;
-			}
-			.social-gp:hover {
-				color: #d34836;
-			}
-			.social-em:hover {
-				color: #f39c12;
-			}
-            
             .circular
             {
             margin:auto;
@@ -143,98 +108,12 @@
         Engineering Projects
     </div>
     Developed by <a href="http://github.com/mehulsr">MSR</a>
-    <br/>
-    <br/>
-    <div id="filters" style="font-size:16px; width:auto; text-align:center;">
-        <label style="">Filters:&nbsp;&nbsp;&nbsp;&nbsp;</label>
-        
-        <!--<div style="float:left; width:auto;">-->
-            <label class="">Year &nbsp;</label>
-            <select class="" id="year">
-                <option value="First">First</option>
-                <option value="Second">Second</option>
-                <option value="Third">Third</option>
-                <option value="Fourth">Fourth</option>
-                <option value="M.Tech I">M.Tech I</option>
-                <option value="M.Tech II">M.Tech II</option> 
-            </select>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-        <!--</div>-->
-        
-        <!--<div style="float:left; width:auto;">-->
-            <label id="Label1" class="">Level &nbsp;</label>
-            <select class="" id="level">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-        <!--</div>-->
-        
-        <!--<div style="float:left; width:auto;">-->
-            <label class="">Time Taken &nbsp</label>
-            <select class="" id="time">
-                <option value="0-1 Semester">0-1 Semester</option>
-                <option value="1-2 Semester">1-2 Semester</option>
-                <option value="1-2 Year">1-2 Year</option>
-                <option value="2-3 Years">2-3 Year</option>
-                <option value="> 3 Years">> 3 Year</option>
-            </select>
-        <!--</div>                -->
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            
-            <input type="button" id="submit" class="btn btn-primary" value="Search" style="margin-left:10px; margin-right:10px;" OnClick="submit_Click"/>
-            <input type="button" id="submit" class="btn btn-primary" value="Submit Project" style="margin-left:10px; margin-right:10px;" onclick="window.location='Submissions.html';"/>
-    </div>
-    <!--<br/>-->
-    <!--<br/>-->
-    <!--<div id="buttons" style="width:100%;">-->
-    <!--</div>-->
 </div>
 
 <div id="containers" style="width:80%; margin-left:auto; margin-right:auto; margin-top:0px; margin-bottom:72px; background-color:#ffffff; height:auto;">
-<!--#1BBC9B #f39c12-->
     <div class="result" style="padding:10px; margin:0px 20px; background-color:#1bbc98; font-size:larger; font-weight:700; color:#ffffff;">
-        Results
+        Approve These:
     </div>
-    
-    <div class="each-proj">
-        <div class="proj-title">
-            <img class="proj-img" src="Images/colourful.jpg"/>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            Search Engine Optimisation
-        </div>
-        
-        <div class="proj-content">
-            <!--<div style="width:25%; padding:10px; float:left; text-align:center; vertical-align:center;">
-                <img src="Images/colourful.jpg" style="width:120px; height:90px;"/>
-            </div>-->
-            <div class="proj-desc">
-                <p>
-                    This project aims to optimise the desktop search by indexing only those files that are useful only to the user.
-                    This project aims to optimise the desktop search by indexing only those files that are useful only to the user. 
-                    This project aims to optimise the desktop search by indexing only those files that are useful only to the user. <br/>
-                </p>
-                <p>
-                    Level: 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    Year: 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    Time Taken: 1 Semester <br/>
-                </p>
-            </div>
-        </div>
-        
-        <div class="proj-footer" >
-            <i>Important Links:</i>
-            <i class="proj-links"><a href="http://github.com/mehulsr/SEO">http://github.com/mehulsr/SEO</a></i>
-            <br/>                
-            <i>Tags:</i>
-            <i class="proj-links">#basic #seo</i>
-        </div>
-        
-    </div>   
- 
 </div>
 
 
@@ -265,63 +144,158 @@
     </div>
  </div>
  
- <script>
-    var myDataRef = new Firebase('https://engineering-projects.firebaseio.com//display-projects');
+ <script>     
+    var approval_db_path='https://engineering-projects.firebaseio.com//require-approval-projects';
+    var myDataRef = new Firebase(approval_db_path);
     
    /** @uthor: Mehul Smriti Raje
-    * Function to fetch entries and form them in the table
+    * Function to fetch new entries and store them in a table for approval by the admin
    */
 
     var projectList = $('#containers');    
 
     myDataRef.on('child_added', function(snapshot) {
         var data = snapshot.val();
-        displayProject(data);
+        var key = snapshot.key();
+        displayProject(data,key);
     });
     
-    function displayProject(data) {
-        var newProject = $('<div class="each-proj"/>');
+    function displayProject(data,key) {
+        var newProject = $('<div class="each-proj"/>').attr('id',key);
             newProject.append($('<div class="proj-title"/>')
                         .append($('<img class="proj-img" src="Images/colourful.jpg"/>'))
-                        .append($('<span/>').html('&nbsp;&nbsp;&nbsp;&nbsp;'+ data.name)) 
+                        .append($('<span style="padding-left:10px;"/>')
+                            .append($('<input type="text"/>').val(''+data.name).attr("id",''+key+"_name"))
+                            ) 
                         );
-            
+                        
             newProject.append($('<div class="proj-content"/>')
                         .append($('<div class="proj-desc"/>')
-                            .append($('<p/>').html(data.desc+'<br/>'))
-                            .append($('<p/>').html('Platform Used:&nbsp;'+ data.platform +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
-                                                   'Project Type:&nbsp;'+ data.ptype +'<br/>'+
-                                                   'Languages Used:&nbsp;'+data.languages+'<br/>'))
-                            .append($('<p/>').html('Level:&nbsp;'+ data.level +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
-                                                   'Year:&nbsp;'+ data.year +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
-                                                   'Team Size:&nbsp;'+ data.size +'&nbsp;Member(s)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
-                                                   'Time Taken:&nbsp;'+data.time+'<br/>'))
+                            .append($('<textarea rows="3" style="width:100%"/>').html(data.desc).attr("id",''+key+"_desc"))
+                            .append($('<p/>')
+                                .append($('<span/>').html('Platform Used:&nbsp;').append($('<input type="text"/>').val(data.platform).attr("id",''+key+"_platform") ))
+                                .append($('<span/>').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'))
+                                .append($('<span/>').html('Project Type:&nbsp;').append($('<input type="text"/>').val(data.ptype).attr("id",''+key+"_ptype") ))
+                                .append($('<br/>')) 
+                                .append($('<span/>').html('Languages Used:&nbsp;').append($('<input type="text"/>').val(data.languages).attr("id",''+key+"_languages") ))
+                                .append($('<br/>'))
                                 )
-                            );
+                            .append($('<p/>')
+                                .append($('<span/>').html('Level:&nbsp;').append($('<input type="text" style="width:80px;"/>').val(data.level).attr("id",''+key+"_level") ))
+                                .append($('<span/>').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'))
+                                .append($('<span/>').html('Year:&nbsp;').append($('<input type="text" style="width:80px;"/>').val(data.year).attr("id",''+key+"_year") ))
+                                .append($('<span/>').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'))
+                                .append($('<span/>').html('Team Size:&nbsp;').append($('<input type="text" style="width:80px;"/>').val(data.size).attr("id",''+key+"_size") ))
+                                .append($('<span/>').html('&nbsp;Member(s)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'))
+                                .append($('<span/>').html('Time Taken:&nbsp;').append($('<input type="text"/>').val(data.time).attr("id",''+key+"_time") ))
+                                .append($('<br/>')) 
+                                )                                                                                            
+                            )
+                        );                         
 
             newProject.append($('<div class="proj-footer" >')
                         .append($('<i/>').html('Contact for Queries:&nbsp;'))
                         .append($('<i class="proj-links"/>')
-                            .append($('<a/>').html(data.contact))
+                            .append($('<input type="text" style="width:50%;"/>').val(data.contact).attr("id",''+key+"_contact"))
                             )
                         .append($('<br/>'))
-                        
                         .append($('<span style="width:50%; float:left;"/>')                                
                             .append($('<i/>').html('Important Links:&nbsp;'))
                             .append($('<i class="proj-links"/>')
-                                .append($('<a href="http://github.com/mehulsr/SEO"/>').html('http://github.com/mehulsr/SEO'))
+                                .append($('<input type="text" style="width:50%;"/>').val(''+data.links).attr("id",''+key+"_links"))
                                 )
                             )
-                       
                         .append($('<span style="width:50%; float:right; text-align:right;"/>')
                             .append($('<i/>').html('Tags:&nbsp;'))
-                            .append($('<i class="proj-links">').html('#basic #seo'))
+                            .append($('<i class="proj-links">')
+                                .append($('<input type="text" style="width:50%;"/>').val(''+data.tags).attr("id",''+key+"_tags"))
+                                )
                             )
                         .append($('<br/>'))
+                        .append($('<br/>'))
+                        .append($('<div style="text-align:center;"/>')
+                            .append($('<input type="button" class="btn btn-primary" style="margin:0px 10px;" value="Commit"/>').on("click",{key_val:key},commit_entry))
+                            .append($('<input type="button" class="btn btn-primary" style="margin:0px 10px;" value="Delete"/>').on("click",{key_val:key},delete_entry))
+                            )
                         );
-                        
+                                              
         projectList.append(newProject);
     };
+    
+         
+     
+   /** @uthor: Mehul Smriti Raje
+    * Function to submit an entry into the databse
+   */
+    function tester(event)
+    {
+        console.log("button click event");
+        console.log(event.data.key_val);
+    }
+    
+        
+    myDataRef.on('child_removed', function(snapshot) {
+        $('#'+snapshot.key()).remove();
+    });
+    
+    var myDataRef_commit = new Firebase('https://engineering-projects.firebaseio.com//display-projects');
+    function commit_entry(event) 
+    {
+        console.log("inside function");
+        console.log(event.data.key_val);
+        var key=event.data.key_val;
+        
+        var name = $('#'+key+'_name').val();
+        var desc = $('#'+key+'_desc').val();
+        var platform = $('#'+key+'_platform').val();
+        var size = $('#'+key+'_size').val();
+        var languages = $('#'+key+'_languages').val();
+        var ptype = $('#'+key+'_ptype').val();
+        var year = $('#'+key+'_year').val();
+        var level = $('#'+key+'_level').val();
+        var time = $('#'+key+'_time').val();
+        var contact = $('#'+key+'_contact').val();
+        var links = $('#'+key+'_links').val();
+        var tags = $('#'+key+'_tags').val();
+        
+        try
+        {
+            console.log("before pushing");
+            myDataRef_commit.push({name: name, desc: desc, platform:platform, size:size,
+                        languages:languages ,ptype:ptype, year:year, level:level, time:time, 
+                        contact:contact, links:links, tags: tags
+                        });  
+            
+            // new Firebase(approval_db_path+'//'+key).remove();
+            myDataRef.child(key).remove();            
+            alert("Entry Submitted! Submit Another Entry.");          
+        }
+        catch(err)
+        {
+            console.log(err);
+            alert("Error Submitting Entry! Please try again!");
+        }
+    };
+    
+    function delete_entry(event) 
+    {
+        console.log("inside delete function");
+        console.log(event.data.key_val);
+        var key=event.data.key_val;
+        
+        try
+        {
+            new Firebase(approval_db_path+'//'+key).remove();
+            // myDataRef.child(key).remove();            
+            alert("Entry Removed! :)");          
+        }
+        catch(err)
+        {
+            console.log(err);
+            alert("Error Removing Entry! Please try again!");
+        }
+    };    
+    
 </script>
         
 

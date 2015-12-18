@@ -323,23 +323,21 @@
                         });  
                         
               
-            $('#name').val('');
-            $('#desc').val('');
-            $('#platform').val('');
-            $('#size').val('');
-            
-            for(var i=0;i<8;i++)
+            $('#proj-name').val('');
+            $('#proj-desc').val('');
+            $('#proj-platform').val('');
+            $('#proj-size').val('');
+
+            for(var i=1;i<=8;i++)
             {
-                if($(lang_id).checked)
-                    $(lang_id).checked=!$(lang_id).checked;
-            }        
-            
-            $('#type').val('');
-            $('#year').val('');
-            $('#level').val('');
-            $('#time').val('');
-            $('#contact').val('');
-            $('#links').val('');
+                var lang_id = "#cb"+i;
+                if($(lang_id).is(":checked"))
+                {
+                    $(lang_id).attr('checked', false);
+                }
+            }                    
+            $('#proj-contact').val('');
+            $('#proj-links').val('');
             alert("Entry Submitted! Submit Another Entry.");          
         }
         catch(err)
