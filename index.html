@@ -372,19 +372,21 @@
                             )
                         .append($('<br/>'))
 
-                        .append($('<span style="width:50%; float:left;"/>')
-                            .append($('<i/>').html('Important Links:&nbsp;'))
-                            .append($('<i class="proj-links"/>')
-                                .append($('<a href="'+data.links+'"/>').html(data.links))
+                        .append($('<span style="width:100%;"/>')
+                            .append($('<span style="width:50%; float:left;"/>')
+                                .append($('<i/>').html('Important Links:&nbsp;'))
+                                .append($('<i class="proj-links"/>').html(data.links)
+                                    // .append($('<a href="'+data.links+'"/>').html(data.links))
+                                    )
+                                )
+                            .append($('<span style="width:50%; height:auto; float:right; text-align:right;"/>')
+                                .append($('<i/>').html('Tags:&nbsp;'))
+                                .append($('<i class="proj-links">').html(data.tags))
                                 )
                             )
-
-                        .append($('<span style="width:50%; float:right; text-align:right;"/>')
-                            .append($('<i/>').html('Tags:&nbsp;'))
-                            .append($('<i class="proj-links">').html(data.tags))
-                            )
-                        .append($('<br/>'))
+                            .append($('<br/>'))
                         );
+
 
         projectList.append(newProject);
     };
