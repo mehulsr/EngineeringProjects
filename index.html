@@ -150,8 +150,8 @@
 
         <!--<div style="float:left; width:auto;">-->
             <label class="">Year &nbsp;</label>
-            <select class="" id="year">
-                <option value="none"></option>
+            <select class="" id="year" disabled="disabled">
+                <option value=""></option>
                 <option value="First">First</option>
                 <option value="Second">Second</option>
                 <option value="Third">Third</option>
@@ -164,8 +164,8 @@
 
         <!--<div style="float:left; width:auto;">-->
             <label id="Label1" class="">Level &nbsp;</label>
-            <select class="" id="level">
-                <option value="none"></option>
+            <select class="" id="level" disabled="disabled">
+                <option value=""></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -177,20 +177,21 @@
 
         <!--<div style="float:left; width:auto;">-->
             <label class="">Time Taken &nbsp;</label>
-            <select class="" id="time">
-                <option value="none"></option>
+            <select class="" id="time" disabled="disabled">
+                <option value=""></option>
                 <option value="0-1 Semester">0-1 Semester</option>
                 <option value="1-2 Semester">1-2 Semester</option>
                 <option value="1-2 Year">1-2 Year</option>
                 <option value="2-3 Years">2-3 Year</option>
                 <option value="> 3 Years">> 3 Year</option>
             </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;
         <!--</div>
                   -->
         <!--<div style="float:left; width:auto;">-->
             <label class="">Branch &nbsp;</label>
-            <select class="" id="branch">
-                <option value="none"></option>
+            <select class="" id="branch" disabled="disabled">
+                <option value=""></option>
                 <option value="Mix">Mix</option>
                 <option value="AER">AER</option>
                 <option value="AUT">AUT</option>
@@ -211,10 +212,9 @@
                 <option value="MCA">MCA</option>
             </select>
         <!--</div>                -->
-
             &nbsp;&nbsp;&nbsp;&nbsp;
 
-            <input type="button" id="search_button" class="btn btn-primary" value="Search" style="margin-left:10px; margin-right:10px;" OnClick=""/>
+            <input type="button" id="search_button" disabled="disabled" class="btn btn-primary" value="Search" style="margin-left:10px; margin-right:10px;" OnClick=""/>
             <input type="button" id="submit" class="btn btn-primary" value="Submit Project" style="margin-left:10px; margin-right:10px;" onclick="window.location='Submissions.html';"/>
     </div>
     <!--<br/>-->
@@ -306,23 +306,24 @@
 
         $rows.show().filter(function() {
             var text = $(this).text();   //.replace(/\s+/g, ' ').toLowerCase();
-            return !~text.indexOf(year_val);
+            console.log(text);
+            return !~text.indexOf(year_val);//(text.indexOf(year_val) && text.indexOf(level_val) && text.indexOf(time_val) && text.indexOf(branch_val) );
         }).hide();
 
-        $rows.show().filter(function() {
-            var text = $(this).text();   //.replace(/\s+/g, ' ').toLowerCase();
-            return !~text.indexOf(level_val);
-        }).hide();
-
-        $rows.show().filter(function() {
-            var text = $(this).text();   //.replace(/\s+/g, ' ').toLowerCase();
-            return !~text.indexOf(time_val);
-        }).hide();
-
-        $rows.show().filter(function() {
-            var text = $(this).text();   //.replace(/\s+/g, ' ').toLowerCase();
-            return !~text.indexOf(branch_val);
-        }).hide();
+        // $rows.show().filter(function() {
+        //     var text = $(this).text();   //.replace(/\s+/g, ' ').toLowerCase();
+        //     return !~text.indexOf(level_val);
+        // }).hide();
+        //
+        // $rows.show().filter(function() {
+        //     var text = $(this).text();   //.replace(/\s+/g, ' ').toLowerCase();
+        //     return !~text.indexOf(time_val);
+        // }).hide();
+        //
+        // $rows.show().filter(function() {
+        //     var text = $(this).text();   //.replace(/\s+/g, ' ').toLowerCase();
+        //     return !~text.indexOf(branch_val);
+        // }).hide();
     });
 
 
@@ -372,13 +373,13 @@
                         .append($('<span style="width:50%; float:left;"/>')
                             .append($('<i/>').html('Important Links:&nbsp;'))
                             .append($('<i class="proj-links"/>')
-                                .append($('<a href="http://github.com/mehulsr/SEO"/>').html('http://github.com/mehulsr/SEO'))
+                                .append($('<a href="'+data.links+'"/>').html(data.links))
                                 )
                             )
 
                         .append($('<span style="width:50%; float:right; text-align:right;"/>')
                             .append($('<i/>').html('Tags:&nbsp;'))
-                            .append($('<i class="proj-links">').html('#basic #seo'))
+                            .append($('<i class="proj-links">').html(data.tags))
                             )
                         .append($('<br/>'))
                         );
