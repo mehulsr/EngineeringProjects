@@ -365,26 +365,26 @@
                                 )
                             );
 
-            newProject.append($('<div class="proj-footer" >')
+            newProject.append($('<div class="proj-footer" style="overflow:auto;" >')
                         .append($('<i/>').html('Contact for Queries:&nbsp;'))
                         .append($('<i class="proj-links"/>')
                             .append($('<a/>').html(data.contact))
                             )
                         .append($('<br/>'))
 
-                        .append($('<span style="width:100%;"/>')
-                            .append($('<span style="width:50%; float:left;"/>')
-                                .append($('<i/>').html('Important Links:&nbsp;'))
-                                .append($('<i class="proj-links"/>').html(data.links)
-                                    // .append($('<a href="'+data.links+'"/>').html(data.links))
-                                    )
-                                )
-                            .append($('<span style="width:50%; height:auto; float:right; text-align:right;"/>')
-                                .append($('<i/>').html('Tags:&nbsp;'))
-                                .append($('<i class="proj-links">').html(data.tags))
+                        // .append($('<div style="width:100%;"/>')
+                        .append($('<div style="width:50%; float:left;"/>')
+                            .append($('<i/>').html('Important Links:&nbsp;'))
+                            .append($('<i class="proj-links"/>').html(data.links)
+                                // .append($('<a href="'+data.links+'"/>').html(data.links))
                                 )
                             )
-                            .append($('<br/>'))
+                        .append($('<div style="width:50%;float:right; text-align:right;"/>')
+                            .append($('<i/>').html('Tags:&nbsp;'))
+                            .append($('<i class="proj-links">').html(data.tags))
+                            )
+                        // )
+                        .append($('<br/>'))
                         );
 
 
