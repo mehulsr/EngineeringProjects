@@ -16,7 +16,7 @@
         .submit_class {
             color:#000000;
         }
-        
+
         body{
             /*background: url("Images/colourful.jpg");*/
             background-size: cover;
@@ -48,25 +48,25 @@
             font-size: 87px;
         }
 
-        #social:hover 
+        #social:hover
         {
-    		-webkit-transform:scale(1.1); 
-            -moz-transform:scale(1.1); 
-            -o-transform:scale(1.1); 
+    		-webkit-transform:scale(1.1);
+            -moz-transform:scale(1.1);
+            -o-transform:scale(1.1);
 	    }
-		
-        #social 
+
+        #social
         {
 			-webkit-transform:scale(0.8);
                 /* Browser Variations: */
             -moz-transform:scale(0.8);
-            -o-transform:scale(0.8); 
-            -webkit-transition-duration: 0.5s; 
+            -o-transform:scale(0.8);
+            -webkit-transition-duration: 0.5s;
             -moz-transition-duration: 0.5s;
             -o-transition-duration: 0.5s;
-		}           
-/* 
-    Only Needed in Multi-Coloured Variation 
+		}
+/*
+    Only Needed in Multi-Coloured Variation
                                                */
 			.social-fb:hover {
 				color: #3B5998;
@@ -80,7 +80,7 @@
 			.social-em:hover {
 				color: #f39c12;
 			}
-            
+
             .circular
             {
             margin:auto;
@@ -90,64 +90,64 @@
             -webkit-border-radius: 150px;
             -moz-border-radius: 150px;
             }
-            
+
             .each-proj
             {
-                border:1px solid rgba(0,0,0,0.1); 
-                margin-left:20px; 
-                margin-right:20px; 
+                border:1px solid rgba(0,0,0,0.1);
+                margin-left:20px;
+                margin-right:20px;
                 background-color:#f9f9f9;
             }
             .proj-title
             {
-                padding:10px; 
-                font-size:larger; 
-                font-weight:600; 
+                padding:10px;
+                font-size:larger;
+                font-weight:600;
                 width:100%;
             }
             .proj-img
             {
-                width:36px; 
+                width:36px;
                 height:24px;
             }
             .proj-content
             {
-                width:100%; 
+                width:100%;
                 float:left;
             }
             .proj-desc
             {
-                padding:0px 10px; 
+                padding:0px 10px;
                 /*float:right;*/
             }
             .proj-footer
             {
-                width:100%; 
-                padding-top:10px; 
-                padding-bottom:10px; 
-                padding-left:10px; 
-                padding-right:10px;                
+                width:100%;
+                padding-top:10px;
+                padding-bottom:10px;
+                padding-left:10px;
+                padding-right:10px;
             }
             .proj-links
             {
                 color:#337ab7;
             }
-            
+
     </style>
 
 </head>
 <body>
-    
+
 <div id="header" style="padding-top:36px; padding-bottom:36px; width:80%; margin-left:auto; margin-right:auto; background-color:#ffffff; text-align:center;">
     <div style="width:100%; font-weight:700; font-size:36px; ">
         Engineering Projects
     </div>
-    Developed by <a href="http://github.com/mehulsr">MSR</a>
+    Developed by <a href="http://github.com/mehulsr/EngineeringProjects">MSR</a>
     <br/>
     <br/>
     <div id="filters" style="font-size:16px; width:auto; text-align:center;">
         <label style="">Filters:&nbsp;&nbsp;&nbsp;&nbsp;</label>
-        
+
         <!--<div style="float:left; width:auto;">-->
             <label class="">Year &nbsp;</label>
             <select class="" id="year">
@@ -157,11 +157,11 @@
                 <option value="Third">Third</option>
                 <option value="Fourth">Fourth</option>
                 <option value="M.Tech I">M.Tech I</option>
-                <option value="M.Tech II">M.Tech II</option> 
+                <option value="M.Tech II">M.Tech II</option>
             </select>
             &nbsp;&nbsp;&nbsp;&nbsp;
         <!--</div>-->
-        
+
         <!--<div style="float:left; width:auto;">-->
             <label id="Label1" class="">Level &nbsp;</label>
             <select class="" id="level">
@@ -174,9 +174,9 @@
             </select>
             &nbsp;&nbsp;&nbsp;&nbsp;
         <!--</div>-->
-        
+
         <!--<div style="float:left; width:auto;">-->
-            <label class="">Time Taken &nbsp</label>
+            <label class="">Time Taken &nbsp;</label>
             <select class="" id="time">
                 <option value="none"></option>
                 <option value="0-1 Semester">0-1 Semester</option>
@@ -185,9 +185,35 @@
                 <option value="2-3 Years">2-3 Year</option>
                 <option value="> 3 Years">> 3 Year</option>
             </select>
+        <!--</div>
+                  -->
+        <!--<div style="float:left; width:auto;">-->
+            <label class="">Branch &nbsp;</label>
+            <select class="" id="branch">
+                <option value="none"></option>
+                <option value="Mix">Mix</option>
+                <option value="AER">AER</option>
+                <option value="AUT">AUT</option>
+                <option value="BME">BME</option>
+                <option value="CHE">CHE</option>
+                <option value="CIV">CIV</option>
+                <option value="CCE">CCE</option>
+                <option value="CSE">CSE</option>
+                <option value="EEE">EEE</option>
+                <option value="ECE">ECE</option>
+                <option value="IP">IP</option>
+                <option value="ICT">ICT</option>
+                <option value="ICE">ICE</option>
+                <option value="MME">MME</option>
+                <option value="MTR">MTR</option>
+                <option value="PME">PME</option>
+                <option value="MTE">MTE</option>
+                <option value="MCA">MCA</option>
+            </select>
         <!--</div>                -->
+
             &nbsp;&nbsp;&nbsp;&nbsp;
-            
+
             <input type="button" id="search_button" class="btn btn-primary" value="Search" style="margin-left:10px; margin-right:10px;" OnClick=""/>
             <input type="button" id="submit" class="btn btn-primary" value="Submit Project" style="margin-left:10px; margin-right:10px;" onclick="window.location='Submissions.html';"/>
     </div>
@@ -202,14 +228,14 @@
     <div class="result" style="padding:10px; margin:0px 20px; background-color:#1bbc98; font-size:larger; font-weight:700; color:#ffffff;">
         Results
     </div>
-    
+
     <div class="each-proj">
         <div class="proj-title">
             <img class="proj-img" src="Images/colourful.jpg"/>
             &nbsp;&nbsp;&nbsp;&nbsp;
             Search Engine Optimisation
         </div>
-        
+
         <div class="proj-content">
             <!--<div style="width:25%; padding:10px; float:left; text-align:center; vertical-align:center;">
                 <img src="Images/colourful.jpg" style="width:120px; height:90px;"/>
@@ -217,7 +243,7 @@
             <div class="proj-desc">
                 <p>
                     This project aims to optimise the desktop search by indexing only those files that are useful only to the user.
-                    This project aims to optimise the desktop search by indexing only those files that are useful only to the user. 
+                    This project aims to optimise the desktop search by indexing only those files that are useful only to the user.
                     This project aims to optimise the desktop search by indexing only those files that are useful only to the user. <br/>
                 </p>
                 <p>
@@ -227,17 +253,17 @@
                 </p>
             </div>
         </div>
-        
+
         <div class="proj-footer" >
             <i>Important Links:</i>
             <i class="proj-links"><a href="http://github.com/mehulsr/SEO">http://github.com/mehulsr/SEO</a></i>
-            <br/>                
+            <br/>
             <i>Tags:</i>
             <i class="proj-links">#basic #seo</i>
         </div>
-        
-    </div>   
- 
+
+    </div>
+
 </div>
 
 
@@ -250,7 +276,7 @@
             <p>
                 Hi, I am Mehul!<br/>
                 I am a software developer who thinks that all the code I write will crawl out and form a Matrix someday. I get excited by the prospect of any fantasy that feels like it can be coded to change the world.
-                I am currently breaking my head over Neural Networks and Formal Languages. 
+                I am currently breaking my head over Neural Networks and Formal Languages.
             </p>
         </div>
     </div>
@@ -267,21 +293,22 @@
             </div>
     </div>
  </div>
- 
+
  <script>
-     
+
     var $rows = $('.each-proj');
     $('#search_button').click(function() {
         // var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
         var year_val=$('#year').val();
         var level_val=$('#level').val();
         var time_val=$('#time').val();
-        
+        var branch_val=$('#branch').val();
+
         $rows.show().filter(function() {
             var text = $(this).text();   //.replace(/\s+/g, ' ').toLowerCase();
             return !~text.indexOf(year_val);
         }).hide();
-        
+
         $rows.show().filter(function() {
             var text = $(this).text();   //.replace(/\s+/g, ' ').toLowerCase();
             return !~text.indexOf(level_val);
@@ -290,30 +317,35 @@
         $rows.show().filter(function() {
             var text = $(this).text();   //.replace(/\s+/g, ' ').toLowerCase();
             return !~text.indexOf(time_val);
-        }).hide();                
-    });      
-     
-     
+        }).hide();
+
+        $rows.show().filter(function() {
+            var text = $(this).text();   //.replace(/\s+/g, ' ').toLowerCase();
+            return !~text.indexOf(branch_val);
+        }).hide();
+    });
+
+
     var myDataRef = new Firebase('https://engineering-projects.firebaseio.com//display-projects');
-    
+
    /** @uthor: Mehul Smriti Raje
     * Function to fetch entries and form them in the table
    */
 
-    var projectList = $('#containers');    
+    var projectList = $('#containers');
 
     myDataRef.on('child_added', function(snapshot) {
         var data = snapshot.val();
         displayProject(data);
     });
-    
+
     function displayProject(data) {
         var newProject = $('<div class="each-proj"/>');
             newProject.append($('<div class="proj-title"/>')
                         .append($('<img class="proj-img" src="Images/colourful.jpg"/>'))
-                        .append($('<span/>').html('&nbsp;&nbsp;&nbsp;&nbsp;'+ data.name)) 
+                        .append($('<span/>').html('&nbsp;&nbsp;&nbsp;&nbsp;'+ data.name))
                         );
-            
+
             newProject.append($('<div class="proj-content"/>')
                         .append($('<div class="proj-desc"/>')
                             .append($('<p/>').html(data.desc+'<br/>'))
@@ -324,6 +356,9 @@
                                                    'Year:&nbsp;'+ data.year +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
                                                    'Team Size:&nbsp;'+ data.size +'&nbsp;Member(s)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
                                                    'Time Taken:&nbsp;'+data.time+'<br/>'))
+                            .append($('<p/>').html('Branch:&nbsp;'+ data.branch +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
+                                                   'College:&nbsp;'+ data.college +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
+                                                   'Country:&nbsp;'+data.country+'<br/>'))
                                 )
                             );
 
@@ -333,25 +368,25 @@
                             .append($('<a/>').html(data.contact))
                             )
                         .append($('<br/>'))
-                        
-                        .append($('<span style="width:50%; float:left;"/>')                                
+
+                        .append($('<span style="width:50%; float:left;"/>')
                             .append($('<i/>').html('Important Links:&nbsp;'))
                             .append($('<i class="proj-links"/>')
                                 .append($('<a href="http://github.com/mehulsr/SEO"/>').html('http://github.com/mehulsr/SEO'))
                                 )
                             )
-                       
+
                         .append($('<span style="width:50%; float:right; text-align:right;"/>')
                             .append($('<i/>').html('Tags:&nbsp;'))
                             .append($('<i class="proj-links">').html('#basic #seo'))
                             )
                         .append($('<br/>'))
                         );
-                        
+
         projectList.append(newProject);
     };
 </script>
-        
+
 
 </body>
 </html>
