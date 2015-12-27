@@ -10,7 +10,7 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/jquery-1.9.1.min.js"></script>
-      <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
     <style>
@@ -23,7 +23,7 @@
             /*background: url("Images/colourful.jpg");*/
             background-size: cover;
             background-repeat: no-repeat;
-	        /*background-color: #f8f8f8;*/
+            /*background-color: #f8f8f8;*/
             font-family: 'Roboto';
         }
 
@@ -52,88 +52,88 @@
 
         #social:hover
         {
-    		-webkit-transform:scale(1.1);
+            -webkit-transform:scale(1.1);
             -moz-transform:scale(1.1);
             -o-transform:scale(1.1);
-	    }
+        }
 
         #social
         {
-			-webkit-transform:scale(0.8);
-                /* Browser Variations: */
+            -webkit-transform:scale(0.8);
+            /* Browser Variations: */
             -moz-transform:scale(0.8);
             -o-transform:scale(0.8);
             -webkit-transition-duration: 0.5s;
             -moz-transition-duration: 0.5s;
             -o-transition-duration: 0.5s;
-		}
-/*
-    Only Needed in Multi-Coloured Variation
-                                               */
-			.social-fb:hover {
-				color: #3B5998;
-			}
-			.social-tw:hover {
-				color: #4099FF;
-			}
-			.social-gp:hover {
-				color: #d34836;
-			}
-			.social-em:hover {
-				color: #f39c12;
-			}
+        }
+        /*
+            Only Needed in Multi-Coloured Variation
+                                                       */
+        .social-fb:hover {
+            color: #3B5998;
+        }
+        .social-tw:hover {
+            color: #4099FF;
+        }
+        .social-gp:hover {
+            color: #d34836;
+        }
+        .social-em:hover {
+            color: #f39c12;
+        }
 
-            .circular
-            {
+        .circular
+        {
             margin:auto;
             width: 120px;
             height: 120px;
             border-radius: 150px;
             -webkit-border-radius: 150px;
             -moz-border-radius: 150px;
-            }
+        }
 
-            .each-proj
-            {
-                border:1px solid rgba(0,0,0,0.1);
-                margin-left:20px;
-                margin-right:20px;
-                background-color:#f9f9f9;
-            }
-            .proj-title
-            {
-                padding:10px;
-                font-size:larger;
-                font-weight:600;
-                width:100%;
-            }
-            .proj-img
-            {
-                width:36px;
-                height:24px;
-            }
-            .proj-content
-            {
-                width:100%;
-                float:left;
-            }
-            .proj-desc
-            {
-                padding:0px 10px;
-                /*float:right;*/
-            }
-            .proj-footer
-            {
-                width:100%;
-                padding-top:10px;
-                padding-bottom:10px;
-                padding-left:10px;
-                padding-right:10px;
-            }
-            .proj-links
-            {
-                color:#337ab7;
-            }
+        .each-proj
+        {
+            border:1px solid rgba(0,0,0,0.1);
+            margin-left:20px;
+            margin-right:20px;
+            background-color:#f9f9f9;
+        }
+        .proj-title
+        {
+            padding:10px;
+            font-size:larger;
+            font-weight:600;
+            width:100%;
+        }
+        .proj-img
+        {
+            width:36px;
+            height:24px;
+        }
+        .proj-content
+        {
+            width:100%;
+            float:left;
+        }
+        .proj-desc
+        {
+            padding:0px 10px;
+            /*float:right;*/
+        }
+        .proj-footer
+        {
+            width:100%;
+            padding-top:10px;
+            padding-bottom:10px;
+            padding-left:10px;
+            padding-right:10px;
+        }
+        .proj-links
+        {
+            color:#337ab7;
+        }
 
     </style>
 
@@ -151,73 +151,73 @@
         <label style="">Filters:&nbsp;&nbsp;&nbsp;&nbsp;</label>
 
         <!--<div style="float:left; width:auto;">-->
-            <label class="">Year &nbsp;</label>
-            <select class="" id="year" disabled="disabled">
-                <option value=""></option>
-                <option value="First">First</option>
-                <option value="Second">Second</option>
-                <option value="Third">Third</option>
-                <option value="Fourth">Fourth</option>
-                <option value="M.Tech I">M.Tech I</option>
-                <option value="M.Tech II">M.Tech II</option>
-            </select>
-            &nbsp;&nbsp;&nbsp;&nbsp;
+        <label class="">Year &nbsp;</label>
+        <select class="" id="year" disabled="disabled">
+            <option value=""></option>
+            <option value="First">First</option>
+            <option value="Second">Second</option>
+            <option value="Third">Third</option>
+            <option value="Fourth">Fourth</option>
+            <option value="M.Tech I">M.Tech I</option>
+            <option value="M.Tech II">M.Tech II</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;
         <!--</div>-->
 
         <!--<div style="float:left; width:auto;">-->
-            <label id="Label1" class="">Level &nbsp;</label>
-            <select class="" id="level" disabled="disabled">
-                <option value=""></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-            &nbsp;&nbsp;&nbsp;&nbsp;
+        <label id="Label1" class="">Level &nbsp;</label>
+        <select class="" id="level" disabled="disabled">
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;
         <!--</div>-->
 
         <!--<div style="float:left; width:auto;">-->
-            <label class="">Time Taken &nbsp;</label>
-            <select class="" id="time" disabled="disabled">
-                <option value=""></option>
-                <option value="0-1 Semester">0-1 Semester</option>
-                <option value="1-2 Semester">1-2 Semester</option>
-                <option value="1-2 Year">1-2 Year</option>
-                <option value="2-3 Years">2-3 Year</option>
-                <option value="> 3 Years">> 3 Year</option>
-            </select>
-            &nbsp;&nbsp;&nbsp;&nbsp;
+        <label class="">Time Taken &nbsp;</label>
+        <select class="" id="time" disabled="disabled">
+            <option value=""></option>
+            <option value="0-1 Semester">0-1 Semester</option>
+            <option value="1-2 Semester">1-2 Semester</option>
+            <option value="1-2 Year">1-2 Year</option>
+            <option value="2-3 Years">2-3 Year</option>
+            <option value="> 3 Years">> 3 Year</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;
         <!--</div>
                   -->
         <!--<div style="float:left; width:auto;">-->
-            <label class="">Branch &nbsp;</label>
-            <select class="" id="branch" disabled="disabled">
-                <option value=""></option>
-                <option value="Mix">Mix</option>
-                <option value="AER">AER</option>
-                <option value="AUT">AUT</option>
-                <option value="BME">BME</option>
-                <option value="CHE">CHE</option>
-                <option value="CIV">CIV</option>
-                <option value="CCE">CCE</option>
-                <option value="CSE">CSE</option>
-                <option value="EEE">EEE</option>
-                <option value="ECE">ECE</option>
-                <option value="IP">IP</option>
-                <option value="ICT">ICT</option>
-                <option value="ICE">ICE</option>
-                <option value="MME">MME</option>
-                <option value="MTR">MTR</option>
-                <option value="PME">PME</option>
-                <option value="MTE">MTE</option>
-                <option value="MCA">MCA</option>
-            </select>
+        <label class="">Branch &nbsp;</label>
+        <select class="" id="branch" disabled="disabled">
+            <option value=""></option>
+            <option value="Mix">Mix</option>
+            <option value="AER">AER</option>
+            <option value="AUT">AUT</option>
+            <option value="BME">BME</option>
+            <option value="CHE">CHE</option>
+            <option value="CIV">CIV</option>
+            <option value="CCE">CCE</option>
+            <option value="CSE">CSE</option>
+            <option value="EEE">EEE</option>
+            <option value="ECE">ECE</option>
+            <option value="IP">IP</option>
+            <option value="ICT">ICT</option>
+            <option value="ICE">ICE</option>
+            <option value="MME">MME</option>
+            <option value="MTR">MTR</option>
+            <option value="PME">PME</option>
+            <option value="MTE">MTE</option>
+            <option value="MCA">MCA</option>
+        </select>
         <!--</div>                -->
-            &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;
 
-            <input type="button" id="search_button" disabled="disabled" class="btn btn-primary" value="Search" style="margin-left:10px; margin-right:10px;" OnClick=""/>
-            <input type="button" id="submit" class="btn btn-primary" value="Submit Project" style="margin-left:10px; margin-right:10px;" onclick="window.location='submissions.html';"/>
+        <input type="button" id="search_button" disabled="disabled" class="btn btn-primary" value="Search" style="margin-left:10px; margin-right:10px;" OnClick=""/>
+        <input type="button" id="submit" class="btn btn-primary" value="Submit Project" style="margin-left:10px; margin-right:10px;" onclick="window.location='submissions.html';"/>
     </div>
     <!--<br/>-->
     <!--<br/>-->
@@ -226,7 +226,7 @@
 </div>
 
 <div id="containers" style="width:80%; margin-left:auto; margin-right:auto; margin-top:0px; margin-bottom:72px; background-color:#ffffff; height:auto;">
-<!--#1BBC9B #f39c12-->
+    <!--#1BBC9B #f39c12-->
     <div class="result" style="padding:10px; margin:0px 20px; background-color:#1bbc98; font-size:larger; font-weight:700; color:#ffffff;">
         Results
     </div>
@@ -285,18 +285,18 @@
     <div style="width:100%;">
         <p style="padding-top:10px; margin: 0 0 0px; text-align:center;">- Mehul Smriti Raje &copy; 2015 -</p>
         <br />
-            <div style="margin-left:auto; margin-right:auto; text-align:center; padding-top:0px; padding-bottom:20px;">
-                <a href="https://github.com/mehulsr"><img id="I1" src="Images/github.png" width="30" height="30" class="fa fa-facebook-square fa-3x social-tw"/></a>
-                <a href="http://lnkd.in/bJybHkK"><img id="I1" src="Images/linkedin.png" width="30" height="30" class="fa fa-facebook-square fa-3x social-tw"/></a>
-                <a href="https://www.facebook.com/mehul.s.raje"><img id="I1" src="Images/facebook.png" width="30" height="30" class="fa fa-facebook-square fa-3x social-tw"/></a>
-                <a href="https://twitter.com/MSR163"><img id="I1" src="Images/twitter.png" width="30" height="30" class="fa fa-twitter-square fa-3x social-tw"/></a>
-                <a href="https://plus.google.com/+MehulSmritiRaje"><img id="I2" src="Images/googleplus.png" width="30" height="30" class="fa fa-google-plus-square fa-3x social-gp"/></a>
-                <a href="mailto:mehul.raje@gmail.com"><img id="I3" src="Images/email.png" width="30" height="30" class="fa fa-envelope-square fa-3x social-em"/></a>
-            </div>
+        <div style="margin-left:auto; margin-right:auto; text-align:center; padding-top:0px; padding-bottom:20px;">
+            <a href="https://github.com/mehulsr"><img id="I1" src="Images/github.png" width="30" height="30" class="fa fa-facebook-square fa-3x social-tw"/></a>
+            <a href="http://lnkd.in/bJybHkK"><img id="I1" src="Images/linkedin.png" width="30" height="30" class="fa fa-facebook-square fa-3x social-tw"/></a>
+            <a href="https://www.facebook.com/mehul.s.raje"><img id="I1" src="Images/facebook.png" width="30" height="30" class="fa fa-facebook-square fa-3x social-tw"/></a>
+            <a href="https://twitter.com/MSR163"><img id="I1" src="Images/twitter.png" width="30" height="30" class="fa fa-twitter-square fa-3x social-tw"/></a>
+            <a href="https://plus.google.com/+MehulSmritiRaje"><img id="I2" src="Images/googleplus.png" width="30" height="30" class="fa fa-google-plus-square fa-3x social-gp"/></a>
+            <a href="mailto:mehul.raje@gmail.com"><img id="I3" src="Images/email.png" width="30" height="30" class="fa fa-envelope-square fa-3x social-em"/></a>
+        </div>
     </div>
- </div>
+</div>
 
- <script>
+<script>
 
     var $rows = $('.each-proj');
     $('#search_button').click(function() {
@@ -331,9 +331,9 @@
 
     var myDataRef = new Firebase('https://engineering-projects.firebaseio.com//display-projects');
 
-   /** @uthor: Mehul Smriti Raje
-    * Function to fetch entries and form them in the table
-   */
+    /** @uthor: Mehul Smriti Raje
+     * Function to fetch entries and form them in the table
+     */
 
     var projectList = $('#containers');
 
@@ -343,49 +343,58 @@
     });
 
     function displayProject(data) {
+        /**
+         * Logic to append all Comma-Separated Links as Clickable Links
+         * link_t contains data ready to be appended to 'Important Links'
+         * */
+        var link_t=$('<i class="proj-links"/>');
+        var str_array = data.links.split(',');
+        for(var i = 0; i < str_array.length; i++) {
+            str_array[i] = str_array[i].replace(/^\s*/, "").replace(/\s*$/, "");
+            link_t.append($('<a href="'+str_array[i]+'" target="_blank"/>').html(str_array[i]));
+            if(i< str_array.length - 1)
+            {
+                link_t.append($('<br/>'));
+            }
+        }
         var newProject = $('<div class="each-proj"/>');
-            newProject.append($('<div class="proj-title"/>')
-                        .append($('<img class="proj-img" src="Images/colourful.jpg"/>'))
-                        .append($('<span/>').html('&nbsp;&nbsp;&nbsp;&nbsp;'+ data.name))
-                        );
+        newProject.append($('<div class="proj-title"/>')
+                .append($('<img class="proj-img" src="Images/colourful.jpg"/>'))
+                .append($('<span/>').html('&nbsp;&nbsp;&nbsp;&nbsp;'+ data.name))
+        );
 
-            newProject.append($('<div class="proj-content"/>')
-                        .append($('<div class="proj-desc"/>')
-                            .append($('<p/>').html(data.desc+'<br/>'))
-                            .append($('<p/>').html('Platform Used:&nbsp;'+ data.platform +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
-                                                   'Project Type:&nbsp;'+ data.ptype +'<br/>'+
-                                                   'Languages Used:&nbsp;'+data.languages+'<br/>'))
-                            .append($('<p/>').html('Level:&nbsp;'+ data.level +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
-                                                   'Year:&nbsp;'+ data.year +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
-                                                   'Team Size:&nbsp;'+ data.size +'&nbsp;Member(s)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
-                                                   'Time Taken:&nbsp;'+data.time+'<br/>'))
-                            .append($('<p/>').html('Branch:&nbsp;'+ data.branch +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
-                                                   'College:&nbsp;'+ data.college +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
-                                                   'Country:&nbsp;'+data.country+'<br/>'))
-                                )
-                            );
+        newProject.append($('<div class="proj-content"/>')
+                .append($('<div class="proj-desc"/>')
+                        .append($('<p/>').html(data.desc+'<br/>'))
+                        .append($('<p/>').html('Platform Used:&nbsp;'+ data.platform +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
+                                'Project Type:&nbsp;'+ data.ptype +'<br/>'+
+                                'Languages Used:&nbsp;'+data.languages+'<br/>'))
+                        .append($('<p/>').html('Level:&nbsp;'+ data.level +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
+                                'Year:&nbsp;'+ data.year +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
+                                'Team Size:&nbsp;'+ data.size +'&nbsp;Member(s)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
+                                'Time Taken:&nbsp;'+data.time+'<br/>'))
+                        .append($('<p/>').html('Branch:&nbsp;'+ data.branch +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
+                                'College:&nbsp;'+ data.college +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
+                                'Country:&nbsp;'+data.country+'<br/>'))
+                )
+        );
 
-            newProject.append($('<div class="proj-footer" style="overflow:auto;" >')
-                        .append($('<i/>').html('Contact for Queries:&nbsp;'))
-                        .append($('<i class="proj-links"/>')
-                            .append($('<a/>').html(data.contact))
-                            )
-                        .append($('<br/>'))
-
-                        // .append($('<div style="width:100%;"/>')
-                        .append($('<div style="width:50%; float:left;"/>')
-                            .append($('<i/>').html('Important Links:&nbsp;'))
-                            .append($('<i class="proj-links"/>').html(data.links)
-                                // .append($('<a href="'+data.links+'"/>').html(data.links))
-                                )
-                            )
-                        .append($('<div style="width:50%;float:right; text-align:right;"/>')
-                            .append($('<i/>').html('Tags:&nbsp;'))
-                            .append($('<i class="proj-links">').html(data.tags))
-                            )
-                        // )
-                        .append($('<br/>'))
-                        );
+        newProject.append($('<div class="proj-footer" style="overflow:auto;" >')
+                .append($('<i/>').html('Contact for Queries:&nbsp;'))
+                .append($('<i class="proj-links"/>')
+                        .append($('<a/>').html(data.contact))
+                )
+                .append($('<br/>'))
+                .append($('<div style="width:50%; float:left;"/>')
+                        .append($('<i/>').html('Important Links:&nbsp;'))
+                        .append(link_t)
+                )
+                .append($('<div style="width:50%;float:right; text-align:right;"/>')
+                        .append($('<i/>').html('Tags:&nbsp;'))
+                        .append($('<i class="proj-links">').html(data.tags))
+                )
+                .append($('<br/>'))
+        );
 
 
         projectList.append(newProject);
